@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Seasons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe5b4; /* Naranja claro */
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; /* Suaviza el desplazamiento */
+        }
+        header {
+            background-color: #2d6a4f;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 120px;
+            margin-right: 20px;
+        }
+        .menu {
+            background-color: #ff9f1c;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            background-color: #d98d00;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        section {
+            padding: 50px 0;
+        }
+        .carousel {
+            position: relative;
+            margin: auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .product {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo Natural Seasons" class="logo"> <!-- Cambia la ruta del logo -->
+    <h1 style="color: white;">Natural Seasons</h1>
+</header>
+
+<nav class="menu">
+    <a href="#quienes-somos">Quiénes Somos</a>
+    <a href="#productos">Productos</a>
+    <a href="#blog">Blog</a>
+    <a href="#contactos">Contactos</a>
+</nav>
+
+<div class="container">
+    <h2>Bienvenido a Natural Seasons</h2>
+    <p>Descubre nuestra variedad de jugos naturales hechos con ingredientes frescos y saludables.</p>
+   <div class="carousel">
+    <img src="img/imagen1.jpeg" class="active" alt="Imagen 1">
+    <img src="img/imagen2.jpeg" alt="Imagen 2">
+    <img src="img/imagen3.jpeg" alt="Imagen 3">
+</div>
+
+<!-- Sección Productos -->
+<section id="productos" class="container">
+    <h2>Nuestros Jugos Naturales</h2>
+    <div class="product">
+        <img src="img/jugo1.jpeg" alt="Jugo 1">
+        <h3>Jugo 1</h3>
+        <p>Maracuya.</p>
+        <p><strong>$45.00</strong></p>
+    </div>
+    <div class="product">
+        <img src="img/jugo2.jpeg" alt="Jugo 2">
+        <h3>Jugo 2</h3>
+        <p>Limon.</p>
+        <p><strong>$60.00</strong></p>
+    </div>
+    <div class="product">
+        <img src="img/jugo3.jpeg" alt="Jugo 3">
+        <h3>Jugo 3</h3>
+        <p>Coco.</p>
+        <p><strong>$60.00</strong></p>
+    </div>
+</section>
+
+</section>
+
+<!-- Sección Blog -->
+<section id="blog" class="container">
+    <h2>Blog</h2>
+    <p>Escribe aquí tus artículos sobre jugos naturales.</p>
+    <h3>Opiniones de los usuarios:</h3>
+    <textarea placeholder="Escribe tu opinión aquí..." style="width: 100%; height: 100px;"></textarea>
+</section>
+
+<!-- Sección Contactos -->
+<section id="contactos" class="container">
+    <h2>Contáctanos</h2>
+    <p>Síguenos en nuestras redes sociales:</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61573564325970">Facebook</a> |
+        <a href="https://www.instagram.com/seasons_natura?igsh=eWxmZzBnbHg2eTd6">Instagram</a> |
+        <a href="https://www.tiktok.com/@natural.seasons?_t=ZM-8uL6x3L4LCv&_r=1">Tiktok</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Natural Seasons - Todos los derechos reservados</p>
+</footer>
+
+<script>
+    // Código para el carrusel de imágenes
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function changeImage() {
+        images[currentImageIndex].classList.remove('active');
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].classList.add('active');
+    }
+
+    setInterval(changeImage, 5000); // Cambia la imagen cada 5 segundos
+</script>
+
+</body>
+</html>
